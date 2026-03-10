@@ -370,9 +370,13 @@ body {
     overflow: hidden;
 
 }
-/* --- Mobile Horizontal Scroll for Projects --- */
+/* --- Site Mothathil Stable Aakkan (Lock horizontal scroll for entire site) --- */
+body, html {
+    overflow-x: hidden;
+}
+
+/* --- Mobile Horizontal Scroll for ALL Grids --- */
 @media (max-width: 768px) {
-    /* '.grid-2' enna class name ningalude html-il project cards nilkkunna main div-nte peril aakki maattanam */
     .grid-2 { 
         display: flex !important;
         flex-direction: row !important;
@@ -381,18 +385,18 @@ body {
         overflow-y: hidden;
         gap: 15px;
         padding-bottom: 15px;
-        scroll-snap-type: x mandatory; /* Smooth scrolling-nu vendi */
-        
-        /* Scrollbar hide cheyyan */
+        scroll-snap-type: x mandatory; 
         scrollbar-width: none; 
+        width: 100%; /* Grid purathekku pokathirikkan */
+        max-width: 100vw;
     }
 
     .grid-2::-webkit-scrollbar {
-        display: none; /* Chrome, Safari-il scrollbar kanathirikkan */
+        display: none; 
     }
 
-    .project-card {
-        min-width: 85%; /* Oru screen-il oru card poornamayum, adutha card-nte oru bhagamum kaanan */
+    .grid-2 > div {
+        min-width: 85%; 
         flex-shrink: 0;
         scroll-snap-align: center;
     }
