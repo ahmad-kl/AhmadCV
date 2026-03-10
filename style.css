@@ -401,3 +401,26 @@ body, html {
         scroll-snap-align: center;
     }
 }
+/* --- Ellam Mobile Screen-il Fit Aakkan ulla code --- */
+
+* {
+    box-sizing: border-box; /* Padding kaaranam purathekku pokathirikkan */
+}
+
+@media (max-width: 768px) {
+    /* Profile card screen-nte ullil thanne nirthan */
+    .profile-card, aside, .left-sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        overflow-wrap: break-word;
+    }
+    
+    /* Body krithyamayi lock cheyyan */
+    body {
+        width: 100vw;
+        max-width: 100%;
+        overflow-x: hidden !important; /* Left-Right scroll purathekku pokilla */
+    }
+}
