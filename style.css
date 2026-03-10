@@ -368,4 +368,32 @@ body {
 /* Zoom aavumbol image card-nte purathekku pokathirikkan */
 .project-card {
     overflow: hidden;
+
+}
+/* --- Mobile Horizontal Scroll for Projects --- */
+@media (max-width: 768px) {
+    /* '.grid-2' enna class name ningalude html-il project cards nilkkunna main div-nte peril aakki maattanam */
+    .grid-2 { 
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 15px;
+        padding-bottom: 15px;
+        scroll-snap-type: x mandatory; /* Smooth scrolling-nu vendi */
+        
+        /* Scrollbar hide cheyyan */
+        scrollbar-width: none; 
+    }
+
+    .grid-2::-webkit-scrollbar {
+        display: none; /* Chrome, Safari-il scrollbar kanathirikkan */
+    }
+
+    .project-card {
+        min-width: 85%; /* Oru screen-il oru card poornamayum, adutha card-nte oru bhagamum kaanan */
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
 }
