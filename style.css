@@ -1,4 +1,3 @@
-
 :root {
     --bg-deep: #050505;        
     --bg-card: #0a0d0b;        
@@ -104,14 +103,12 @@ body {
     width: 100%;
 }
 
-
 .main-layout {
     display: grid;
     grid-template-columns: 320px 1fr;
     gap: 50px;
     align-items: start;
 }
-
 
 .left-sidebar {
     position: sticky;
@@ -140,6 +137,13 @@ body {
     box-shadow: 0 0 15px var(--accent-green);
 }
 
+/* Desktop Flex Layout for Profile Header */
+.profile-header-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .profile-photo-shadow {
     position: relative;
     display: inline-block;
@@ -165,17 +169,19 @@ body {
     border: 3px solid var(--accent-green);
 }
 
-.profile-card h1 {
+.profile-titles h1 {
     font-size: 1.8rem;
     margin-bottom: 5px;
     color: var(--text-main);
 }
 
-.profile-card .title {
+/* Desktop Badge Style */
+.title-badge {
     color: var(--accent-green);
     font-size: 0.95rem;
     margin-bottom: 20px;
     letter-spacing: 1px;
+    display: block;
 }
 
 .profile-details {
@@ -202,7 +208,7 @@ body {
     color: var(--accent-green);
 }
 
-
+/* Toggle Button - Hidden on Desktop */
 .toggle-contacts {
     display: none; 
     background: transparent;
@@ -223,10 +229,9 @@ body {
     width: 25px;
     height: 3px;
     background-color: var(--accent-green);
-    margin: 5px auto;
+    margin: 4px auto;
     transition: 0.3s;
 }
-
 
 .tab-content {
     display: none;
@@ -241,7 +246,6 @@ body {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 
 .content-section {
     background-color: var(--bg-card);
@@ -265,7 +269,6 @@ body {
     color: var(--text-muted);
     font-size: 1.05rem;
 }
-
 
 .grid-2 {
     display: grid;
@@ -322,7 +325,6 @@ body {
     font-style: italic;
 }
 
-
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 16px;
@@ -358,7 +360,6 @@ body {
     box-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
 }
 
-
 .project-img {
     width: 100%;
     height: 200px;
@@ -377,34 +378,113 @@ body {
     overflow: hidden;
 }
 
-
+/* =========================================
+   📱 APP-LIKE MOBILE RESPONSIVE DESIGN
+   ========================================= */
 
 @media (max-width: 900px) {
+    
+    /* 1. ലോഗോ ഹൈഡ് ചെയ്യുക */
+    .top-bar .logo {
+        display: none; 
+    }
+    .top-bar {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    /* 2. നാവിഗേഷൻ മെനു സ്ക്രീനിന്റെ ഏറ്റവും താഴേക്ക് മാറ്റുക (Bottom App Bar) */
+    .nav-links {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 13, 11, 0.95); /* Semi-transparent background */
+        display: flex;
+        justify-content: space-around;
+        padding: 15px 10px;
+        margin: 0;
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+    
+    /* താഴെ മെനു വരുന്നത് കൊണ്ട് കണ്ടന്റിന് താഴെ ഗ്യാപ്പ് കൊടുക്കുന്നു */
+    body {
+        padding-bottom: 80px; 
+    }
+
     .main-layout {
         grid-template-columns: 1fr; 
+        gap: 20px;
     }
     
     .left-sidebar {
         position: relative;
         top: 0;
-        margin-bottom: 20px;
-    }
-    
-    .top-bar {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-    
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
     }
 
-    
+    /* 3. പ്രൊഫൈൽ കാർഡ് മുകളിലെ ഒറ്റ കണ്ടെയ്നറായി മാറ്റുന്നു */
+    .profile-card {
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 12px;
+    }
+
+    /* ഫോട്ടോ, പേര്, ബട്ടൺ എന്നിവ ഒരൊറ്റ വരിയിൽ (Row) */
+    .profile-header-flex {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* ഫോട്ടോ ഇടത് വശത്ത് ഒതുക്കാൻ */
+    .profile-photo-shadow {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .profile-img {
+        width: 60px; /* ചെറിയ ഫോട്ടോ */
+        height: 60px;
+        border-width: 2px;
+    }
+
+    /* പേരും ബാഡ്ജും നടുവിൽ കൊടുക്കാൻ */
+    .profile-titles {
+        flex-grow: 1;
+        padding: 0 15px;
+    }
+
+    .profile-titles h1 {
+        font-size: 1.2rem;
+        margin-bottom: 3px;
+    }
+
+    /* 4. ചെറിയ കണ്ടെയ്നറിലുള്ള ജോലി വിവരണം (Badge Box) */
+    .title-badge {
+        font-size: 0.65rem;
+        background: rgba(0, 255, 102, 0.1); /* ചെറിയ ബാക്ക്ഗ്രൗണ്ട് */
+        border: 1px solid rgba(0, 255, 102, 0.4);
+        padding: 4px 8px;
+        border-radius: 6px;
+        margin-bottom: 0;
+        display: inline-block;
+        line-height: 1.3;
+        color: var(--accent-green);
+    }
+
     .toggle-contacts {
-        display: block;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        flex-shrink: 0;
     }
 
     .profile-details {
@@ -419,8 +499,30 @@ body {
     .profile-details.show-details {
         max-height: 400px; 
         opacity: 1;
-        padding-top: 25px;
+        padding-top: 20px;
+        margin-top: 15px;
         border-top: 1px solid var(--border-color);
+    }
+
+    
+    #portfolio .grid-2 {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 15px;
+        gap: 15px;
+        scrollbar-width: none; 
+    }
+    
+    #portfolio .grid-2::-webkit-scrollbar {
+        display: none; 
+    }
+    
+    #portfolio .card.project-card {
+        flex: 0 0 85%; 
+        scroll-snap-align: center;
+        margin: 0; 
     }
 }
 
@@ -428,29 +530,10 @@ body {
     .container {
         padding: 0 15px 30px; 
     }
-
     .content-section {
         padding: 25px 20px; 
     }
-
     .content-section h2 {
         font-size: 1.8rem; 
-    }
-
-    .profile-card {
-        padding: 30px 20px;
-    }
-
-    .profile-img {
-        width: 120px; 
-        height: 120px;
-    }
-
-    .card {
-        padding: 20px; 
-    }
-    
-    .submit-btn {
-        width: 100%; 
     }
 }
