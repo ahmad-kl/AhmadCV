@@ -224,13 +224,20 @@ body {
     border-color: var(--accent-green);
 }
 
-.toggle-contacts .line {
+/* Arrow Icon Design */
+.toggle-contacts .arrow {
+    color: var(--accent-green);
+    font-size: 1.2rem;
+    font-weight: bold;
     display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--accent-green);
-    margin: 4px auto;
-    transition: 0.3s;
+    line-height: 1;
+    transition: transform 0.3s ease; /* ക്ലിക്ക് ചെയ്യുമ്പോൾ തിരിയാൻ ഇത് സഹായിക്കും */
+}
+
+/* ടോഗിൾ ഓപ്പൺ ആകുമ്പോൾ ആരോ താഴേക്ക് തിരിയാൻ */
+.profile-details.show-details ~ * .arrow, /* (If arrow is after) - Just for safety */
+.profile-card:has(.show-details) .arrow {
+    transform: rotate(90deg);
 }
 
 .tab-content {
@@ -485,6 +492,7 @@ body {
         align-items: center;
         margin: 0;
         flex-shrink: 0;
+        padding: 8px 15px; /* Arrow ക്ലിക്ക് ചെയ്യാൻ കുറച്ചുകൂടി എളുപ്പമാക്കാൻ */
     }
 
     .profile-details {
@@ -504,7 +512,9 @@ body {
         border-top: 1px solid var(--border-color);
     }
 
-    
+    /* =========================================
+       📱 HORIZONTAL SCROLL FOR PROJECTS (MOBILE ONLY)
+       ========================================= */
     #portfolio .grid-2 {
         display: flex;
         flex-wrap: nowrap;
