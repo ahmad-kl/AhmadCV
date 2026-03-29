@@ -1,11 +1,12 @@
+/* Premium Midnight Blue & Aqua Theme */
 :root {
-    --bg-deep: #050505;        
-    --bg-card: #0a0d0b;        
-    --accent-green: #00ff66;   
-    --accent-glow: rgba(0, 255, 102, 0.15); 
-    --text-main: #ffffff;
-    --text-muted: #8b9a92;     
-    --border-color: #1a241e;   
+    --bg-deep: #0B132B;        /* Very Dark Blue Background */
+    --bg-card: #1C2541;        /* Slightly lighter blue for cards */
+    --accent-color: #48CAE4;   /* Bright Aqua Blue for highlights */
+    --accent-glow: rgba(72, 202, 228, 0.15); /* Soft Aqua Glow */
+    --text-main: #FFFFFF;      /* Pure White Text */
+    --text-muted: #9BA4B5;     /* Lighter Blue-Grey for paragraphs */
+    --border-color: #3A506B;   /* Professional Blue Border */
 }
 
 * {
@@ -60,8 +61,8 @@ body {
 
 .logo-text::after {
     content: '.';
-    color: var(--accent-green);
-    text-shadow: 0 0 10px var(--accent-green);
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(72, 202, 228, 0.4);
 }
 
 .nav-links {
@@ -89,14 +90,14 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--accent-green);
+    background-color: var(--accent-color);
     transition: width 0.3s ease;
-    box-shadow: 0 0 8px var(--accent-green);
+    box-shadow: 0 0 8px rgba(72, 202, 228, 0.5);
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--accent-green);
-    text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
+    color: var(--accent-color);
+    text-shadow: 0 0 8px rgba(72, 202, 228, 0.3);
 }
 
 .nav-links a.active::after {
@@ -121,7 +122,7 @@ body {
     border-radius: 16px;
     text-align: center;
     border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
     position: relative;
     overflow: hidden;
 }
@@ -133,8 +134,8 @@ body {
     left: 0;
     width: 100%;
     height: 3px;
-    background: var(--accent-green);
-    box-shadow: 0 0 15px var(--accent-green);
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
 }
 
 /* Desktop Flex Layout for Profile Header */
@@ -154,11 +155,11 @@ body {
     content: '';
     position: absolute;
     top: -5px; left: -5px; right: -5px; bottom: -5px;
-    background: var(--accent-green);
+    background: var(--accent-color);
     border-radius: 50%;
     z-index: -1;
     filter: blur(15px);
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
 .profile-img {
@@ -166,7 +167,8 @@ body {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--accent-green);
+    border: 3px solid var(--accent-color); 
+    box-shadow: 0 5px 15px rgba(72, 202, 228, 0.3);
 }
 
 .profile-titles h1 {
@@ -177,11 +179,12 @@ body {
 
 /* Desktop Badge Style */
 .title-badge {
-    color: var(--accent-green);
+    color: var(--accent-color);
     font-size: 0.95rem;
     margin-bottom: 20px;
     letter-spacing: 1px;
     display: block;
+    font-weight: 500;
 }
 
 .profile-details {
@@ -205,13 +208,13 @@ body {
 }
 
 .detail-item a:hover {
-    color: var(--accent-green);
+    color: var(--accent-color);
 }
 
 /* Toggle Button - Hidden on Desktop */
 .toggle-contacts {
     display: none; 
-    background: transparent;
+    background: var(--bg-deep);
     border: 1px solid var(--border-color);
     padding: 8px 12px;
     border-radius: 8px;
@@ -221,21 +224,22 @@ body {
 }
 
 .toggle-contacts:hover {
-    border-color: var(--accent-green);
+    border-color: var(--accent-color);
+    background: var(--bg-card);
 }
 
 /* Arrow Icon Design */
 .toggle-contacts .arrow {
-    color: var(--accent-green);
+    color: var(--accent-color);
     font-size: 1.2rem;
     font-weight: bold;
     display: block;
     line-height: 1;
-    transition: transform 0.3s ease; /* ക്ലിക്ക് ചെയ്യുമ്പോൾ തിരിയാൻ ഇത് സഹായിക്കും */
+    transition: transform 0.3s ease; 
 }
 
-/* ടോഗിൾ ഓപ്പൺ ആകുമ്പോൾ ആരോ താഴേക്ക് തിരിയാൻ */
-.profile-details.show-details ~ * .arrow, /* (If arrow is after) - Just for safety */
+/* Arrow rotation on toggle */
+.profile-details.show-details ~ * .arrow, 
 .profile-card:has(.show-details) .arrow {
     transform: rotate(90deg);
 }
@@ -259,6 +263,7 @@ body {
     padding: 40px;
     border-radius: 16px;
     border: 1px solid var(--border-color);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
 .content-section h2 {
@@ -269,7 +274,7 @@ body {
 
 .content-section h2::after {
     content: '.';
-    color: var(--accent-green);
+    color: var(--accent-color);
 }
 
 .content-section p {
@@ -295,8 +300,8 @@ body {
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent-green);
-    box-shadow: 0 10px 20px rgba(0, 255, 102, 0.05);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 20px rgba(72, 202, 228, 0.1); 
 }
 
 .card h3 {
@@ -310,8 +315,8 @@ body {
     margin-top: 20px;
     padding: 10px 20px;
     background: transparent;
-    border: 1px solid var(--accent-green);
-    color: var(--accent-green);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
     text-decoration: none;
     border-radius: 4px;
     font-size: 0.9rem;
@@ -321,14 +326,14 @@ body {
 }
 
 .btn:hover {
-    background: var(--accent-green);
-    color: var(--bg-deep);
-    box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+    background: var(--accent-color);
+    color: var(--bg-deep); 
+    box-shadow: 0 5px 15px rgba(72, 202, 228, 0.4);
 }
 
 .client-name {
     margin-top: 15px;
-    color: var(--accent-green);
+    color: var(--accent-color);
     font-style: italic;
 }
 
@@ -345,13 +350,17 @@ body {
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
-    border-color: var(--accent-green);
-    box-shadow: 0 0 10px rgba(0, 255, 102, 0.1);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(72, 202, 228, 0.15); 
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #6c7a9c; 
 }
 
 .submit-btn {
     padding: 15px 30px;
-    background: var(--accent-green);
+    background: var(--accent-color);
     color: var(--bg-deep);
     border: none;
     border-radius: 4px;
@@ -363,8 +372,8 @@ body {
 }
 
 .submit-btn:hover {
-    background: #00d656;
-    box-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
+    background: #3ab2c9; 
+    box-shadow: 0 5px 15px rgba(72, 202, 228, 0.4);
 }
 
 .project-img {
@@ -391,7 +400,6 @@ body {
 
 @media (max-width: 900px) {
     
-    /* 1. ലോഗോ ഹൈഡ് ചെയ്യുക */
     .top-bar .logo {
         display: none; 
     }
@@ -401,24 +409,23 @@ body {
         border: none;
     }
 
-    /* 2. നാവിഗേഷൻ മെനു സ്ക്രീനിന്റെ ഏറ്റവും താഴേക്ക് മാറ്റുക (Bottom App Bar) */
+    /* Mobile Bottom Nav - Dark Blue Background */
     .nav-links {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: rgba(10, 13, 11, 0.95); /* Semi-transparent background */
+        background-color: rgba(11, 19, 43, 0.95); 
         display: flex;
         justify-content: space-around;
         padding: 15px 10px;
         margin: 0;
         border-top: 1px solid var(--border-color);
-        box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.2); 
         z-index: 1000;
         backdrop-filter: blur(10px);
     }
     
-    /* താഴെ മെനു വരുന്നത് കൊണ്ട് കണ്ടന്റിന് താഴെ ഗ്യാപ്പ് കൊടുക്കുന്നു */
     body {
         padding-bottom: 80px; 
     }
@@ -433,14 +440,12 @@ body {
         top: 0;
     }
 
-    /* 3. പ്രൊഫൈൽ കാർഡ് മുകളിലെ ഒറ്റ കണ്ടെയ്നറായി മാറ്റുന്നു */
     .profile-card {
         padding: 15px;
         margin-top: 15px;
         border-radius: 12px;
     }
 
-    /* ഫോട്ടോ, പേര്, ബട്ടൺ എന്നിവ ഒരൊറ്റ വരിയിൽ (Row) */
     .profile-header-flex {
         flex-direction: row;
         justify-content: space-between;
@@ -449,19 +454,17 @@ body {
         text-align: left;
     }
 
-    /* ഫോട്ടോ ഇടത് വശത്ത് ഒതുക്കാൻ */
     .profile-photo-shadow {
         margin-bottom: 0;
         flex-shrink: 0;
     }
 
     .profile-img {
-        width: 60px; /* ചെറിയ ഫോട്ടോ */
+        width: 60px; 
         height: 60px;
         border-width: 2px;
     }
 
-    /* പേരും ബാഡ്ജും നടുവിൽ കൊടുക്കാൻ */
     .profile-titles {
         flex-grow: 1;
         padding: 0 15px;
@@ -472,17 +475,18 @@ body {
         margin-bottom: 3px;
     }
 
-    /* 4. ചെറിയ കണ്ടെയ്നറിലുള്ള ജോലി വിവരണം (Badge Box) */
+    /* Small badge for dark theme */
     .title-badge {
         font-size: 0.65rem;
-        background: rgba(0, 255, 102, 0.1); /* ചെറിയ ബാക്ക്ഗ്രൗണ്ട് */
-        border: 1px solid rgba(0, 255, 102, 0.4);
+        background: rgba(72, 202, 228, 0.1); 
+        border: 1px solid rgba(72, 202, 228, 0.3);
         padding: 4px 8px;
         border-radius: 6px;
         margin-bottom: 0;
         display: inline-block;
         line-height: 1.3;
-        color: var(--accent-green);
+        color: var(--accent-color);
+        font-weight: 600;
     }
 
     .toggle-contacts {
@@ -492,7 +496,7 @@ body {
         align-items: center;
         margin: 0;
         flex-shrink: 0;
-        padding: 8px 15px; /* Arrow ക്ലിക്ക് ചെയ്യാൻ കുറച്ചുകൂടി എളുപ്പമാക്കാൻ */
+        padding: 8px 15px; 
     }
 
     .profile-details {
@@ -512,9 +516,7 @@ body {
         border-top: 1px solid var(--border-color);
     }
 
-    /* =========================================
-       📱 HORIZONTAL SCROLL FOR PROJECTS (MOBILE ONLY)
-       ========================================= */
+    /* HORIZONTAL SCROLL FOR PROJECTS */
     #portfolio .grid-2 {
         display: flex;
         flex-wrap: nowrap;
