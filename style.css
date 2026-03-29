@@ -24,6 +24,12 @@ body {
     position: relative;
 }
 
+/* Page Load Animation 🪄 */
+@keyframes pageLoad {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Background Ambient Glow */
 .bg-glow {
     position: fixed;
@@ -104,11 +110,13 @@ body {
     width: 100%;
 }
 
+/* Applying Page Load Animation here */
 .main-layout {
     display: grid;
     grid-template-columns: 320px 1fr;
     gap: 50px;
     align-items: start;
+    animation: pageLoad 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .left-sidebar {
@@ -209,6 +217,41 @@ body {
 
 .detail-item a:hover {
     color: var(--accent-color);
+}
+
+/* =========================================
+   Social Links Styles (Circular Outline) 🔗 
+   ========================================= */
+.social-links {
+    display: flex;
+    justify-content: center; /* ഐക്കണുകൾ നടുവിൽ നിൽക്കാൻ */
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.social-icon {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1.2rem;
+    width: 42px; /* വട്ടത്തിന്റെ വീതി */
+    height: 42px; /* വട്ടത്തിന്റെ ഉയരം */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color); /* ചുറ്റുമുള്ള വര */
+    border-radius: 50%; /* പൂർണ്ണമായ വട്ടം ആക്കാൻ */
+    transition: all 0.3s ease;
+}
+
+/* ഐക്കണിൽ മൗസ് വെക്കുമ്പോഴുള്ള മാറ്റം (Hover) */
+.social-icon:hover {
+    color: var(--bg-deep); /* ഐക്കൺ ഡാർക്ക് ആകും */
+    background-color: var(--accent-color); /* ഉള്ളിൽ അക്വാ ബ്ലൂ നിറം വരും */
+    border-color: var(--accent-color);
+    transform: translateY(-3px); /* ചെറുതായി മുകളിലേക്ക് പൊങ്ങും */
+    box-shadow: 0 5px 15px rgba(72, 202, 228, 0.4);
 }
 
 /* Toggle Button - Hidden on Desktop */
@@ -424,6 +467,36 @@ body {
         box-shadow: 0 -5px 20px rgba(0,0,0,0.2); 
         z-index: 1000;
         backdrop-filter: blur(10px);
+    }
+
+    /* Mobile Menu Dot Indicator 📱 */
+    .nav-links a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.8rem;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: static;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: 0.3s;
+        box-shadow: none;
+    }
+
+    .nav-links a.active {
+        color: var(--accent-color);
+        font-weight: 700;
+    }
+
+    .nav-links a.active::after {
+        background-color: var(--accent-color);
+        width: 5px; /* Keeps the dot size */
     }
     
     body {
