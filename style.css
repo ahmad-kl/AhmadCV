@@ -224,7 +224,7 @@ body {
    ========================================= */
 .social-links {
     display: flex;
-    justify-content: center; /* ഐക്കണുകൾ നടുവിൽ നിൽക്കാൻ */
+    justify-content: center; 
     gap: 15px;
     margin-top: 15px;
     padding-top: 20px;
@@ -235,22 +235,21 @@ body {
     color: var(--text-muted);
     text-decoration: none;
     font-size: 1.2rem;
-    width: 42px; /* വട്ടത്തിന്റെ വീതി */
-    height: 42px; /* വട്ടത്തിന്റെ ഉയരം */
+    width: 42px; 
+    height: 42px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--border-color); /* ചുറ്റുമുള്ള വര */
-    border-radius: 50%; /* പൂർണ്ണമായ വട്ടം ആക്കാൻ */
+    border: 1px solid var(--border-color); 
+    border-radius: 50%; 
     transition: all 0.3s ease;
 }
 
-/* ഐക്കണിൽ മൗസ് വെക്കുമ്പോഴുള്ള മാറ്റം (Hover) */
 .social-icon:hover {
-    color: var(--bg-deep); /* ഐക്കൺ ഡാർക്ക് ആകും */
-    background-color: var(--accent-color); /* ഉള്ളിൽ അക്വാ ബ്ലൂ നിറം വരും */
+    color: var(--bg-deep); 
+    background-color: var(--accent-color); 
     border-color: var(--accent-color);
-    transform: translateY(-3px); /* ചെറുതായി മുകളിലേക്ക് പൊങ്ങും */
+    transform: translateY(-3px); 
     box-shadow: 0 5px 15px rgba(72, 202, 228, 0.4);
 }
 
