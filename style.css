@@ -1,12 +1,11 @@
-/* Premium Midnight Blue & Aqua Theme */
 :root {
-    --bg-deep: #0B132B;        /* Very Dark Blue Background */
-    --bg-card: #1C2541;        /* Slightly lighter blue for cards */
-    --accent-color: #48CAE4;   /* Bright Aqua Blue for highlights */
-    --accent-glow: rgba(72, 202, 228, 0.15); /* Soft Aqua Glow */
-    --text-main: #FFFFFF;      /* Pure White Text */
-    --text-muted: #9BA4B5;     /* Lighter Blue-Grey for paragraphs */
-    --border-color: #3A506B;   /* Professional Blue Border */
+    --bg-deep: #0B132B;        
+    --bg-card: #1C2541;        
+    --accent-color: #48CAE4;  
+    --accent-glow: rgba(72, 202, 228, 0.15); 
+    --text-main: #FFFFFF;     
+    --text-muted: #9BA4B5;     
+    --border-color: #3A506B;   
 }
 
 * {
@@ -24,13 +23,13 @@ body {
     position: relative;
 }
 
-/* Page Load Animation 🪄 */
+
 @keyframes pageLoad {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Background Ambient Glow */
+
 .bg-glow {
     position: fixed;
     top: -20%;
@@ -48,7 +47,7 @@ body {
     padding: 0 20px 50px;
 }
 
-/* Top Bar */
+
 .top-bar {
     display: flex;
     justify-content: space-between;
@@ -110,7 +109,7 @@ body {
     width: 100%;
 }
 
-/* Applying Page Load Animation here */
+
 .main-layout {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -122,6 +121,11 @@ body {
 .left-sidebar {
     position: sticky;
     top: 30px;
+}
+
+
+.right-content {
+    min-width: 0; 
 }
 
 .profile-card {
@@ -146,7 +150,7 @@ body {
     box-shadow: 0 0 15px var(--accent-color);
 }
 
-/* Desktop Flex Layout for Profile Header */
+
 .profile-header-flex {
     display: flex;
     flex-direction: column;
@@ -185,7 +189,7 @@ body {
     color: var(--text-main);
 }
 
-/* Desktop Badge Style */
+
 .title-badge {
     color: var(--accent-color);
     font-size: 0.95rem;
@@ -219,9 +223,7 @@ body {
     color: var(--accent-color);
 }
 
-/* =========================================
-   Social Links Styles (Circular Outline) 🔗 
-   ========================================= */
+
 .social-links {
     display: flex;
     justify-content: center; 
@@ -253,7 +255,7 @@ body {
     box-shadow: 0 5px 15px rgba(72, 202, 228, 0.4);
 }
 
-/* Toggle Button - Hidden on Desktop */
+
 .toggle-contacts {
     display: none; 
     background: var(--bg-deep);
@@ -270,7 +272,7 @@ body {
     background: var(--bg-card);
 }
 
-/* Arrow Icon Design */
+
 .toggle-contacts .arrow {
     color: var(--accent-color);
     font-size: 1.2rem;
@@ -280,7 +282,7 @@ body {
     transition: transform 0.3s ease; 
 }
 
-/* Arrow rotation on toggle */
+
 .profile-details.show-details ~ * .arrow, 
 .profile-card:has(.show-details) .arrow {
     transform: rotate(90deg);
@@ -323,6 +325,7 @@ body {
     color: var(--text-muted);
     font-size: 1.05rem;
 }
+
 
 .grid-2 {
     display: grid;
@@ -436,9 +439,37 @@ body {
     overflow: hidden;
 }
 
-/* =========================================
-   📱 APP-LIKE MOBILE RESPONSIVE DESIGN
-   ========================================= */
+#portfolio .content-section {
+    max-width: 100%; 
+}
+
+#portfolio .grid-2 {
+    display: flex; 
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+    gap: 20px;
+    width: 100%;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+    -webkit-overflow-scrolling: touch; 
+}
+
+#portfolio .grid-2::-webkit-scrollbar {
+    display: none; 
+}
+
+#portfolio .card.project-card {
+    flex: 0 0 auto; 
+    width: 300px; 
+    scroll-snap-align: start;
+    margin: 0;
+}
+
+
+
 
 @media (max-width: 900px) {
     
@@ -451,7 +482,7 @@ body {
         border: none;
     }
 
-    /* Mobile Bottom Nav - Dark Blue Background */
+    
     .nav-links {
         position: fixed;
         bottom: 0;
@@ -468,7 +499,7 @@ body {
         backdrop-filter: blur(10px);
     }
 
-    /* Mobile Menu Dot Indicator 📱 */
+    
     .nav-links a {
         display: flex;
         flex-direction: column;
@@ -547,7 +578,7 @@ body {
         margin-bottom: 3px;
     }
 
-    /* Small badge for dark theme */
+    
     .title-badge {
         font-size: 0.65rem;
         background: rgba(72, 202, 228, 0.1); 
@@ -588,25 +619,10 @@ body {
         border-top: 1px solid var(--border-color);
     }
 
-    /* HORIZONTAL SCROLL FOR PROJECTS */
-    #portfolio .grid-2 {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 15px;
-        gap: 15px;
-        scrollbar-width: none; 
-    }
-    
-    #portfolio .grid-2::-webkit-scrollbar {
-        display: none; 
-    }
     
     #portfolio .card.project-card {
-        flex: 0 0 85%; 
+        width: 85vw; 
         scroll-snap-align: center;
-        margin: 0; 
     }
 }
 
