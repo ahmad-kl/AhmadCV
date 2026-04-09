@@ -1,23 +1,34 @@
-function openTab(event, tabName) {
-    event.preventDefault(); 
+
+const cursor = document.querySelector('.pro-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
     
-    let tabContents = document.querySelectorAll(".tab-content");
-    tabContents.forEach(tab => {
-        tab.classList.remove("active-tab");
-    });
+    if(cursor.style.display === 'none') {
+        cursor.style.display = 'block';
+    }
+});
 
-    let tabLinks = document.querySelectorAll(".tab-link");
-    tabLinks.forEach(link => {
-        link.classList.remove("active");
-    });
+document.addEventListener('scroll', () => {
+    cursor.style.display = 'none'; 
+});
 
-    document.getElementById(tabName).classList.add("active-tab");
-    event.currentTarget.classList.add("active");
+
+const menuBtn = document.getElementById('menu-btn');
+const closeBtn = document.getElementById('close-btn');
+const sidebar = document.getElementById('sidebar');
+
+
+if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.add('active');
+    });
 }
 
-function toggleContacts() {
-    const details = document.querySelector('.profile-details');
-    if (details) {
-        details.classList.toggle('show-details');
-    }
+
+if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+    });
 }
