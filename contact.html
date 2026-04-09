@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad | Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="pro-cursor"></div>
+
+    <button class="mobile-toggle" id="menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="layout-container">
+        
+        <aside class="sidebar glass-panel" id="sidebar">
+            <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
+
+            <div class="profile-img">
+                <img src="profile.png" alt="Ahmad">
+            </div>
+            
+            <h1 class="name">AHMAD</h1>
+            <p class="job-title">WEB DESIGNER & DEVELOPER</p>
+            <p class="location">KERALA, INDIA</p>
+            
+            <div class="divider"></div>
+            
+            <p class="bio">Creating pixel-perfect digital experiences with clean code and premium designs.</p>
+            
+            <div class="connect-section">
+                <h3>CONNECT</h3>
+                <div class="social-grid">
+                    <a href="https://github.com/ahmad-kl" class="social-btn" target="_blank"><i class="fab fa-github"></i> <span>Github</span></a>
+                    <a href="https://wa.me/917510173642" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i> <span>Whatsapp</span></a>
+                    <a href="https://www.instagram.com/ahhmddd._?utm_source=qr&igsh=aXM5dGczaDRpajFi" class="social-btn full-width" target="_blank"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            
+            <nav class="top-nav">
+                <a href="index.html">About</a>
+                <a href="work.html">Portfolio</a>
+                <a href="contact.html" style="color: #fff;">Contact</a>
+            </nav>
+
+            <div class="header-right">
+                <h2 class="section-title">LET'S CONNECT</h2>
+                <p style="color: #888; margin-bottom: 30px;">Interested in working together? Drop me a message below</p>
+            </div>
+            
+            <div class="contact-wrapper">
+                
+                <div class="form-container glass-panel">
+                    <form action="https://formspree.io/f/xeepwgyj" method="POST" class="contact-form">
+                        
+                        <div class="input-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="_replyto" id="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
+                    </form>
+                </div>
+
+                <div class="contact-info" style="margin-top: 30px; display: grid; gap: 20px;">
+                    
+                    <a href="mailto:ahmadkollamofficial@gmail.com" class="info-card glass-panel" style="text-decoration: none; padding: 20px; text-align: center;">
+                        <i class="fas fa-envelope" style="font-size: 2rem; color: #00d2ff; margin-bottom: 15px;"></i>
+                        <h4 style="color: #fff;">Email Me</h4>
+                        <p style="color: #888;">ahmadkollamofficial@gmail.com</p>
+                    </a>
+                    
+                    <a href="tel:+917510173642" class="info-card glass-panel" style="text-decoration: none; padding: 20px; text-align: center;">
+                        <i class="fas fa-phone-alt" style="font-size: 2rem; color: #6b00ff; margin-bottom: 15px;"></i>
+                        <h4 style="color: #fff;">Call Me</h4>
+                        <p style="color: #888;">+91 7510173642</p>
+                    </a>
+                    
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
