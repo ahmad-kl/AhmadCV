@@ -1,169 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmadcv</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="bg-glow"></div>
+    <div class="pro-cursor"></div>
 
-    <div class="container">
-        <header class="top-bar">
-            <div class="logo">
-                <span class="logo-text">AHMAD.</span>
+    <button class="mobile-toggle" id="menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="layout-container">
+        
+        <aside class="sidebar glass-panel" id="sidebar">
+            <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
+
+            <div class="profile-img">
+                <img src="profile.png" alt="Ahmad">
             </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#" class="tab-link active" onclick="openTab(event, 'about')">About</a></li>
-                    <li><a href="#" class="tab-link" onclick="openTab(event, 'portfolio')">Portfolio</a></li>
-                    <li><a href="#" class="tab-link" onclick="openTab(event, 'contact')">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="main-layout">
             
-            <aside class="left-sidebar">
-                <div class="profile-card">
-                    
-                    <div class="profile-header-flex">
-                        <div class="profile-photo-shadow">
-                            <img src="profile.png" alt="Ahmad" class="profile-img">
-                        </div>
-                        
-                        <div class="profile-titles">
-                            <h1>Ahmad</h1>
-                            <span class="title-badge">Creative Web Designer & Front-End Developer</span>
-                        </div>
-                        
-                        <button class="toggle-contacts" onclick="toggleContacts()">
-                            <span class="arrow">❯</span>
-                        </button>
-                    </div>
-
-                    <div class="profile-details">
-                        <div class="detail-item">
-                            <i class="icon">📍</i> Kollam, Kerala, India
-                        </div>
-                        <div class="detail-item">
-                            <i class="icon">✉️</i> <a href="mailto:ahmadbinabdulla786@gmail.com">ahmadbinabdulla786@gmail.com</a>
-                        </div>
-                        <div class="detail-item">
-                            <i class="icon">📞</i> +91 7510173642
-                        </div>
-                        <div class="detail-item">
-                            <i class="icon">💬</i> <a href="https://wa.me/917510173642" target="_blank">WhatsApp Me</a>
-                        </div>
-                        
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/ahhmddd._?igsh=aXM5dGczaDRpajFi" target="_blank" class="social-icon" title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://wa.me/917510173642" target="_blank" class="social-icon" title="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="https://github.com/ahmad-kl" target="_blank" class="social-icon" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
+            <h1 class="name">AHMAD</h1>
+            <p class="job-title">WEB DESIGNER & DEVELOPER</p>
+            <p class="location">KERALA, INDIA</p>
+            
+            <div class="divider"></div>
+            
+            <p class="bio">Creating pixel-perfect digital experiences with clean code and premium designs.</p>
+            
+            <div class="connect-section">
+                <h3>CONNECT</h3>
+                <div class="social-grid">
+                    <a href="https://github.com/ahmad-kl" class="social-btn" target="_blank"><i class="fab fa-github"></i> <span>Github</span></a>
+                    <a href="https://wa.me/917510173642" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i> <span>Whatsapp</span></a>
+                    <a href="https://www.instagram.com/ahhmddd._?utm_source=qr&igsh=aXM5dGczaDRpajFi" class="social-btn full-width" target="_blank"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
                 </div>
-            </aside>
+            </div>
+        </aside>
 
-            <main class="right-content">
+        <main class="content-area">
+            
+            <nav class="top-nav">
+                <a href="#about" style="color: #fff;">About</a>
+                <a href="work.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div id="about" class="about-section" style="margin-bottom: 50px;">
+                <h2 class="section-title">ABOUT ME</h2>
+                <div class="about-content glass-panel" style="padding: 30px;">
+                    <p style="color: #a1a1aa; line-height: 1.8; font-size: 1rem; margin-bottom: 15px;">
+                        Hello! I am Ahmad a passionate Web Designer and Developer from Kerala. I specialize in crafting clean, functional, and visually engaging digital experiences. My approach focuses on combining aesthetically pleasing design with efficient, hand-coded HTML, CSS, and JavaScript.
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="section-title">WHAT I DO</h2>
+            
+            <div class="services-scroll-container">
+                <div class="service-card glass-panel">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Design</h3>
+                    <p>Crafting visually appealing, clean, and user-friendly website designs tailored to your brand.</p>
+                </div>
                 
-                <div id="about" class="tab-content active-tab">
-                    <section class="content-section">
-                        <h2>About Me</h2>
-                        <p>Hi, I'm Ahmad — a Creative Web Designer and Front-End Developer
-who loves building modern and visually appealing websites.
-
-I focus on creating clean, responsive, and user-friendly web
-experiences using HTML, CSS, and JavaScript. My goal is to turn
-ideas into beautiful and functional websites that work smoothly
-on all devices.
-
-I enjoy designing creative layouts, improving user experience,
-and continuously learning new technologies to improve my skills.</p>
-                        <h2 style="margin-top: 40px;">What I Do</h2>
-                        <div class="grid-2">
-                            <div class="card neon-border">
-                                <h3>💻 Web Design</h3>
-                                <p>I design modern and visually appealing website layouts
-with clean and creative user interfaces..</p>
-                            </div>
-                            <div class="card neon-border">
-                                <h3>🧑‍💻 Front-End Development</h3>
-                                <p>I build responsive and fast websites using
-HTML, CSS and JavaScript.</p>
-                            </div>
-                        </div>
-                    </section>
+                <div class="service-card glass-panel">
+                    <i class="fas fa-code"></i>
+                    <h3>Frontend Development</h3>
+                    <p>Building responsive and fast web applications using modern HTML, CSS, and JavaScript.</p>
                 </div>
 
-                <div id="portfolio" class="tab-content">
-                    <section class="content-section">
-                        <h2>My Projects</h2>
-                        
-                        <div class="grid-2">
-                            
-                            <div class="card project-card neon-border">
-                                <img src="course.png" alt="CH DESIGN Preview" class="project-img">
-                                <h3>IN OUT</h3>
-                                <p>A complete online platform designed for selling video editing and design courses.</p>
-                                <a href="https://in0ut.vercel.app" target="_blank" class="btn">View Live Project</a>
-                            </div>
-                            
-                            <div class="card project-card neon-border">
-                                <img src="minhajwork.png" alt="Minhaj Preview" class="project-img">
-                                <h3>Minhaj Portfolio</h3>
-                                <p> A professional portfolio website for a visual content creator.</p>
-                                <a href="https://minhajmadala.vercel.app" target="_blank" class="btn">View Live Project</a>
-                            </div>
-
-                            <div class="card project-card neon-border">
-                                <img src="zynexdesignz.png" alt="Project 3" class="project-img">
-                                <h3>NEW PROJECT</h3>
-                                <p>Puthiya projectinte details ivide add cheyyuka...</p>
-                                <a href="https://zynexdesignz.vercel.app" target="_blank" class="btn">VIEW LIVE PROJECT</a>
-                            </div>
-
-                        </div> </section>
+                <div class="service-card glass-panel">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating intuitive user interfaces and seamless experiences focusing on usability.</p>
                 </div>
+            </div>
 
-                <div id="contact" class="tab-content">
-                    <section class="content-section">
-                        <h2>Let's Connect</h2>
-                        <form action="mailto:ahmadbinabdulla786@gmail.com" method="POST" enctype="text/plain" class="contact-form">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
-                    </section>
-                </div>
+            <div class="action-area" style="margin-top: 40px;">
+                <a href="work.html" class="primary-btn">View My Work <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+            </div>
 
-                <section id="testimonials" class="content-section" style="margin-top: 30px;">
-                    <h2>Client Feedback</h2>
-                    <div class="grid-2">
-                        <div class="card dark-card">
-                            <p>"Delivered a modern, high-converting landing page with excellent design and flow. Very professional and easy to work with."</p>
-                            <h4 class="client-name">- rahees(Business Owner)</h4>
-                        </div>
-                        <div class="card dark-card">
-                            <p>"He perfectly transformed my vision into a clean, professional portfolio. Highly impressed with the quality and attention to detail."</p>
-                            <h4 class="client-name">-Minhaj (visual content creator)</h4>
-                        </div>
-                    </div>
-                </section>
+        </main>
 
-            </main>
-        </div>
     </div>
 
     <script src="script.js"></script>
